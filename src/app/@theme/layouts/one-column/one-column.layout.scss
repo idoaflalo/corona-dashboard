@@ -5,6 +5,10 @@
     .menu-sidebar ::ng-deep .scrollable {
         padding-top: nb-theme(layout-padding-top);
     }
+    .menu-sidebar {
+        background: #24343F;
+        box-shadow: 0 0 6px black;
+    }
     .menu-sidebar,
      ::ng-deep .main-container {
         width: 80px;
@@ -17,8 +21,12 @@
         font-size: 14px;
         justify-content: center;
         text-align: center;
+        color: #BEBEBE;
+        font-weight: 400;
         nb-icon {
+            font-size: 2rem !important;
             margin: 0 !important;
+            color: #1ED6E0 !important;
         }
         span {
             margin-top: 4px;
@@ -26,7 +34,8 @@
             text-align: center !important;
         }
         &.active {
-            border-right: 3px solid #3366ff;
+            border-right: 3px solid #1ED6E0;
+            color: white !important;
         }
     }
 }
