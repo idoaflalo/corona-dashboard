@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   constructor(
     private menuService: NbMenuService,
-    private themeService: NbThemeService
+    private themeService: NbThemeService,
   ) {}
 
   ngOnInit() {
@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .onThemeChange()
       .pipe(
         map(({ name }) => name),
-        takeUntil(this.destroy$)
+        takeUntil(this.destroy$),
       )
       .subscribe((themeName) => (this.currentTheme = themeName));
   }
