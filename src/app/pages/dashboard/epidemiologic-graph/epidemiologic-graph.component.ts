@@ -2,7 +2,7 @@ import { Component, AfterViewInit, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
-  selector: 'epidemiologic-graph',
+  selector: 'ngx-epidemiologic-graph',
   templateUrl: './epidemiologic-graph.component.html',
   styleUrls: ['./epidemiologic-graph.component.scss'],
 })
