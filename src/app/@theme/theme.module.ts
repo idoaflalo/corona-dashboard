@@ -12,16 +12,13 @@ import {
   NbSelectModule,
   NbIconModule,
   NbThemeModule,
+  NbLayoutDirection,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSecurityModule } from '@nebular/security';
 
 import {
-  FooterComponent,
   HeaderComponent,
-  LayoutDirectionSwitcherComponent,
-  SearchInputComponent,
-  SwitcherComponent,
 } from './components';
 import {
   CapitalizePipe,
@@ -55,11 +52,7 @@ const NB_MODULES = [
   NbEvaIconsModule,
 ];
 const COMPONENTS = [
-  SwitcherComponent,
-  LayoutDirectionSwitcherComponent,
   HeaderComponent,
-  FooterComponent,
-  SearchInputComponent,
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
@@ -87,6 +80,8 @@ export class ThemeModule {
             name: 'default',
           },
           [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME, DARK_THEME ],
+          null,
+          NbLayoutDirection.RTL
         ).providers,
       ],
     };
