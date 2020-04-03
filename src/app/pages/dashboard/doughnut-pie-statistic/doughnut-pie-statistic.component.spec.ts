@@ -8,9 +8,8 @@ describe('DoughnutPieStatisticComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DoughnutPieStatisticComponent ]
-    })
-    .compileComponents();
+      declarations: [DoughnutPieStatisticComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

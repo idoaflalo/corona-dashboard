@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { EChartOption } from 'echarts';
 
 @Component({
-  selector: 'doughnut-pie-statistic',
+  selector: 'ngx-doughnut-pie-statistic',
   templateUrl: './doughnut-pie-statistic.component.html',
   styleUrls: ['./doughnut-pie-statistic.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
