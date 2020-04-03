@@ -81,7 +81,7 @@ export class ThemeModule {
           },
           [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME, DARK_THEME ],
           null,
-          NbLayoutDirection.RTL
+          NbLayoutDirection.RTL,
         ).providers,
       ],
     };
