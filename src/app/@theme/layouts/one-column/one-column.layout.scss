@@ -6,4 +6,26 @@
   .menu-sidebar ::ng-deep .scrollable {
     padding-top: nb-theme(layout-padding-top);
   }
+
+  .menu-sidebar, ::ng-deep .main-container {
+    width: 80px;
+  }
+
+  ::ng-deep li a {
+    width: 80px;
+    display: flex;
+    height: 80px;
+    flex-direction: column;
+    font-size: 12px;
+    justify-content: center;
+    text-align: center;
+
+    nb-icon {
+      margin: 0 !important;
+    }
+
+    &.active {
+      border-right: 3px solid #3366ff;
+    }
+  }
 }
