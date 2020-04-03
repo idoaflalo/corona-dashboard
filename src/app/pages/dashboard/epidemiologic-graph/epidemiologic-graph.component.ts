@@ -1,10 +1,10 @@
-import { Component, AfterViewInit, OnDestroy } from "@angular/core";
-import { NbThemeService } from "@nebular/theme";
+import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { NbThemeService } from '@nebular/theme';
 
 @Component({
-  selector: "epidemiologic-graph",
-  templateUrl: "./epidemiologic-graph.component.html",
-  styleUrls: ["./epidemiologic-graph.component.scss"],
+  selector: 'epidemiologic-graph',
+  templateUrl: './epidemiologic-graph.component.html',
+  styleUrls: ['./epidemiologic-graph.component.scss'],
 })
 export class EpidemiologicGraphComponent implements AfterViewInit, OnDestroy {
   options: any = {};
@@ -18,33 +18,33 @@ export class EpidemiologicGraphComponent implements AfterViewInit, OnDestroy {
 
       this.options = {
         backgroundColor: echarts.bg,
-        color: ["#5DC9FE"],
+        color: ['#5DC9FE'],
         tooltip: {
-          trigger: "axis",
+          trigger: 'axis',
           axisPointer: {
-            type: "cross",
+            type: 'cross',
             label: {
               backgroundColor: echarts.tooltipBackgroundColor,
             },
           },
         },
         grid: {
-          left: "3%",
-          right: "4%",
-          bottom: "3%",
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
           containLabel: true,
         },
         xAxis: [
           {
-            type: "category",
+            type: 'category',
             boundaryGap: false,
-            data: ["1.3", "7.3", "14.3", "21.3", "28.3", "4.3", "10.4", "17.4"],
+            data: ['1.3', '7.3', '14.3', '21.3', '28.3', '4.3', '10.4', '17.4'],
             axisTick: {
               alignWithLabel: true,
             },
             axisLine: {
               lineStyle: {
-                color: "transparent",
+                color: 'transparent',
               },
             },
             axisLabel: {
@@ -56,10 +56,10 @@ export class EpidemiologicGraphComponent implements AfterViewInit, OnDestroy {
         ],
         yAxis: [
           {
-            type: "value",
+            type: 'value',
             axisLine: {
               lineStyle: {
-                color: "transparent",
+                color: 'transparent',
               },
             },
             splitLine: {
@@ -76,11 +76,11 @@ export class EpidemiologicGraphComponent implements AfterViewInit, OnDestroy {
         ],
         series: [
           {
-            name: "מקרים",
-            type: "line",
+            name: 'מקרים',
+            type: 'line',
             areaStyle: {
               color: {
-                type: "linear",
+                type: 'linear',
                 x: 0,
                 y: 0,
                 x2: 0,
@@ -88,11 +88,11 @@ export class EpidemiologicGraphComponent implements AfterViewInit, OnDestroy {
                 colorStops: [
                   {
                     offset: 0,
-                    color: "#5DC8FE",
+                    color: '#5DC8FE',
                   },
                   {
                     offset: 1,
-                    color: "#E5FAFD",
+                    color: '#E5FAFD',
                   },
                 ],
               },
