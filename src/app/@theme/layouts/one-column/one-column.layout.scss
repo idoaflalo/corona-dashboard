@@ -6,7 +6,7 @@
         padding-top: nb-theme(layout-padding-top);
     }
     .menu-sidebar {
-        background: #24343F;
+        background: #24343f;
         box-shadow: 0 0 6px black;
     }
     .menu-sidebar,
@@ -21,12 +21,12 @@
         font-size: 14px;
         justify-content: center;
         text-align: center;
-        color: #BEBEBE;
+        color: #bebebe;
         font-weight: 400;
         nb-icon {
             font-size: 2rem !important;
             margin: 0 !important;
-            color: #1ED6E0 !important;
+            color: #1ed6e0 !important;
         }
         span {
             margin-top: 4px;
@@ -34,7 +34,7 @@
             text-align: center !important;
         }
         &.active {
-            border-right: 3px solid #1ED6E0;
+            border-right: 3px solid #1ed6e0;
             color: white !important;
         }
     }
