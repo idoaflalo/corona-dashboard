@@ -2,7 +2,31 @@
   padding: 0;
 }
 
+.total-amount, .changes {
+  margin: 0;
+}
+
+.total-amount {
+  line-height: 1.1;
+}
+
+.changes {
+  font-size: 0.8em;
+
+  & > span {
+    padding: 0 2px;
+  }
+
+  & > .amount, & > .percentage {
+    font-weight: bold;
+  }
+
+  & > .percentage {
+    color: #409293;
+  }
+}
+
 .chart-container {
-  height: 55px;
-  width: 55px;
+  height: 60px;
+  width: 60px;
 }
