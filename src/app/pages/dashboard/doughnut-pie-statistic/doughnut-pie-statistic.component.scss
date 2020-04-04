@@ -24,7 +24,12 @@
   }
 
   & > .percentage {
-    color: #409293;
+    &.positive {
+      color: var(--ngx-negative-color);
+    }
+    &.negative {
+      color: var(--ngx-negative-color);
+    }
   }
 }
 
