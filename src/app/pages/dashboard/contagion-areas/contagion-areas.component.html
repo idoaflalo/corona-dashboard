@@ -10,7 +10,9 @@
         <th nbTreeGridHeaderCell [nbSortHeader]="getDirection(column)" *nbTreeGridHeaderCellDef>
           {{columnsNameValueMap[column]}}
         </th>
-        <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data[column]}}</td>
+        <td nbTreeGridCell *nbTreeGridCellDef="let row" [ngClass]="{'bold-text': column === 'location'}">
+          {{row.data[column]}}
+        </td>
       </ng-container>
 
     </table>
