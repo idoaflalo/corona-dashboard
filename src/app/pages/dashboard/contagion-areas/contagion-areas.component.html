@@ -7,14 +7,13 @@
       <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: allColumns"></tr>
 
       <ng-container *ngFor="let column of allColumns" [nbTreeGridColumnDef]="column">
-        <th nbTreeGridHeaderCell [nbSortHeader]="getDirection(column)" *nbTreeGridHeaderCellDef>
+        <th nbTreeGridHeaderCell [nbSortHeader]="getDirection(column)" *nbTreeGridHeaderCellDef class="header-background">
           {{columnsNameValueMap[column]}}
         </th>
-        <td nbTreeGridCell *nbTreeGridCellDef="let row" [ngClass]="{'bold-text': column === 'location'}">
+        <td nbTreeGridCell *nbTreeGridCellDef="let row" [class.important-column]="column === 'location'">
           {{row.data[column]}}
         </td>
       </ng-container>
-
     </table>
   </nb-card-body>
 </nb-card>

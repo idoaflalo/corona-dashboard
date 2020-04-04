@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NbSortDirection, NbSortRequest, NbTreeGridDataSource, NbTreeGridDataSourceBuilder } from '@nebular/theme';
 import { TreeNode, ContagionAreaEntry } from './interfaces';
+import { ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'ngx-contagion-areas',
   templateUrl: './contagion-areas.component.html',
-  styleUrls: ['./contagion-areas.component.css'],
+  styleUrls: ['./contagion-areas.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContagionAreasComponent {
+export class ContagionAreasComponent implements OnInit {
   allColumns = [ 'location', 'sickCount', 'percentageGrowth', 'percentagePopulation', 'isolatedCount'];
   columnsNameValueMap: Record<string, string> = {
     location: 'יישוב',
@@ -20,7 +22,9 @@ export class ContagionAreasComponent {
   sortColumn: string = '';
   sortDirection: NbSortDirection = NbSortDirection.NONE;
 
-  constructor(private dataSourceBuilder: NbTreeGridDataSourceBuilder<any>) {
+  constructor(private dataSourceBuilder: NbTreeGridDataSourceBuilder<any>) {}
+
+  ngOnInit(): void {
     this.dataSource = this.dataSourceBuilder.create(this.data);
   }
 
