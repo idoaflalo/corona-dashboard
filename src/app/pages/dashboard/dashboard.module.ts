@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NbCardModule } from '@nebular/theme';
+import { NbCardModule, NbIconModule, NbButtonModule } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 
 import { ThemeModule } from '../../@theme/theme.module';
@@ -10,10 +10,14 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { InpatientSegmentationComponent } from './inpatient-segmentation/inpatient-segmentation.component';
 import { NgxLinearGraphComponent } from './ngx-linear-graph/ngx-linear-graph.component';
 import { CoronaMapComponent } from './corona-map/corona-map.component';
+import { SmallStatisticsInfoComponent } from './small-statistics-info/small-statistics-info.component';
+import { SmallGraphStatisticComponent } from './small-graph-statistic/small-graph-statistic.component';
 
 @NgModule({
   imports: [
     NbCardModule,
+    NbIconModule,
+    NbButtonModule,
     ThemeModule,
     NgxEchartsModule,
   ],
@@ -24,7 +28,9 @@ import { CoronaMapComponent } from './corona-map/corona-map.component';
     PieChartComponent,
     InpatientSegmentationComponent,
     NgxLinearGraphComponent,
-    CoronaMapComponent
+    CoronaMapComponent,
+    SmallStatisticsInfoComponent,
+    SmallGraphStatisticComponent,
   ],
 })
 export class DashboardModule {}

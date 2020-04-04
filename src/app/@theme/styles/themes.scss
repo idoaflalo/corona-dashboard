@@ -3,12 +3,16 @@
 // @nebular out of the box themes
 @import '~@nebular/theme/styles/themes';
 
+$nb-enable-css-custom-properties: true;
+
 $nb-themes: nb-register-theme((
   font-family-primary: Open Sans Hebrew,
   font-family-secondary: Open Sans Hebrew,
   layout-padding-top: 2.25rem,
 
   menu-item-icon-margin: 0 0.5rem 0 0,
+
+  button-ghost-small-padding: 0,
 
   card-height-tiny: 13.5rem,
   card-height-small: 21.1875rem,
@@ -24,6 +28,9 @@ $nb-themes: nb-register-theme((
   slide-out-background: #f7f9fc,
   slide-out-shadow-color: 0 4px 14px 0 #8f9bb3,
   slide-out-shadow-color-rtl: 0 4px 14px 0 #8f9bb3,
+
+  ngx-positive-color: #409293,
+  ngx-negative-color: #f3426d,
 ), default, default);
 
 $nb-themes: nb-register-theme((
