@@ -1,5 +1,7 @@
-import { Component, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, Input } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
+import { EpidemiologicData } from './interfaces';
+import { data } from './mock';
 
 @Component({
   selector: 'ngx-epidemiologic-graph',
@@ -9,6 +11,7 @@ import { NbThemeService } from '@nebular/theme';
 export class EpidemiologicGraphComponent implements AfterViewInit, OnDestroy {
   options: any = {};
   themeSubscription: any;
+  @Input() data: EpidemiologicData[] = data;
 
   constructor(private theme: NbThemeService) {}
 
@@ -17,6 +20,9 @@ export class EpidemiologicGraphComponent implements AfterViewInit, OnDestroy {
       const echarts: any = config.variables.echarts;
 
       this.options = {
+        textStyle: {
+          fontFamily: 'Open Sans Hebrew',
+        },
         backgroundColor: echarts.bg,
         color: ['#5DC9FE'],
         tooltip: {
@@ -28,17 +34,11 @@ export class EpidemiologicGraphComponent implements AfterViewInit, OnDestroy {
             },
           },
         },
-        grid: {
-          left: '3%',
-          right: '4%',
-          bottom: '3%',
-          containLabel: true,
-        },
         xAxis: [
           {
             type: 'category',
             boundaryGap: false,
-            data: ['1.3', '7.3', '14.3', '21.3', '28.3', '4.3', '10.4', '17.4'],
+            data: this.data.map((i) => i.date),
             axisTick: {
               alignWithLabel: true,
             },
@@ -97,7 +97,7 @@ export class EpidemiologicGraphComponent implements AfterViewInit, OnDestroy {
                 ],
               },
             },
-            data: [100, 400, 500, 750, 1000, 1550, 2500, 3100],
+            data: this.data.map((i) => i.value),
           },
         ],
       };
