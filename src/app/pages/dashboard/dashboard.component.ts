@@ -14,7 +14,7 @@ export class DashboardComponent {
         { value: 400, name: 'קשה', color: '#48CAFF' },
       ],
     },
-    ...new Array(5).fill(null).map(() => ({
+    ...new Array(4).fill(null).map(() => ({
       title: 'סה"כ נדבקים',
       data: [
         { value: 1780, name: 'קל', color: '#4AB988' },

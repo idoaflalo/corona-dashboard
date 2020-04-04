@@ -1,15 +1,10 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { EChartOption } from 'echarts';
-
-export interface ChartStatisticData {
-  value: number;
-  name: string;
-  color: string;
-}
+import { ChartStatisticData } from '../../../@core/data/statistics';
 
 export interface DoughnutStatsticConfig {
   title: string;
-  data: ChartStatisticData[];
+  data: ChartStatisticData<number>[];
 }
 
 @Component({
