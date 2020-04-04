@@ -73,10 +73,18 @@ export class NgxLinearGraphComponent implements AfterViewInit, OnDestroy {
             },
           },
         ],
+        grid: {
+          left: 40,
+          right: 15,
+          top: 40,
+          bootom: 0,
+        },
         series: [
           {
             name: 'מקרים',
             type: 'line',
+            symbolSize: 8,
+            symbol: 'circle',
             areaStyle: {
               color: {
                 type: 'linear',
