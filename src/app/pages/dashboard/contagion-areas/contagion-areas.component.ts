@@ -11,7 +11,7 @@ interface DataRow {
 @Component({
   selector: 'ngx-contagion-areas',
   templateUrl: './contagion-areas.component.html',
-  styleUrls: ['./contagion-areas.component.css']
+  styleUrls: ['./contagion-areas.component.css'],
 })
 export class ContagionAreasComponent implements OnInit {
   columns: ['location', 'sickCitizensCount', 'percentGrowth', 'percentOfPopulation', 'isolatedCitizensCount'];

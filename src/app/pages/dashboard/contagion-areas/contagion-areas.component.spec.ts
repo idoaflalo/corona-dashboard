@@ -8,7 +8,7 @@ describe('ContagionAreasComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContagionAreasComponent ]
+      declarations: [ ContagionAreasComponent ],
     })
     .compileComponents();
   }));
