@@ -1,0 +1,8 @@
+<table [nbTreeGrid]="data" equalColumnsWidth style="height: 400px">
+  <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: columns"></tr>
+  <ng-container *ngFor="let column of columns" [nbTreeGridColumnDef]="column">
+    <td nbTreeGridCell *nbTreeGridCellDef="let row">
+      {{row[column]}}
+    </td>
+  </ng-container>
+</table>
