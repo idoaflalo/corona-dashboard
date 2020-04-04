@@ -1,9 +1,9 @@
 @import '../@theme/styles/themes';
 :host {
-  display: flex;
+    display: flex;
 }
-@include nb-install-component() {
 
+@include nb-install-component() {
      ::ng-deep router-outlet+* {
         display: block;
         animation: fade 1s;
@@ -16,7 +16,6 @@
             }
         }
     }
-
     .menu-sidebar ::ng-deep .scrollable {
         padding-top: 120px;
     }
@@ -55,8 +54,7 @@
             color: white !important;
         }
     }
-
     ngx-one-column-layout {
-      flex: 1;
+        flex: 1;
     }
 }
