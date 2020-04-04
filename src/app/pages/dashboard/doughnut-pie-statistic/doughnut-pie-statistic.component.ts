@@ -8,6 +8,8 @@ import { EChartOption } from 'echarts';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DoughnutPieStatisticComponent {
+  public readonly title = 'סה"כ נבדקים';
+
   public readonly data = [
     { value: 1780, name: 'קל', color: '#4AB988' },
     { value: 1780, name: 'בינוני', color: '#E6B957' },

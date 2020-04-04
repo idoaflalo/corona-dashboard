@@ -5,6 +5,7 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { ThemeModule } from '../../@theme/theme.module';
 import { DashboardComponent } from './dashboard.component';
 import { DoughnutPieStatisticComponent } from './doughnut-pie-statistic/doughnut-pie-statistic.component';
+import { SmallStatisticsInfoComponent } from './small-statistics-info/small-statistics-info.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { DoughnutPieStatisticComponent } from './doughnut-pie-statistic/doughnut
   declarations: [
     DashboardComponent,
     DoughnutPieStatisticComponent,
+    SmallStatisticsInfoComponent,
   ],
 })
 export class DashboardModule { }
