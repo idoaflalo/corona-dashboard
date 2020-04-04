@@ -8,6 +8,7 @@ import { DoughnutPieStatisticComponent } from './doughnut-pie-statistic/doughnut
 import { EpidemiologicGraphComponent } from './epidemiologic-graph/epidemiologic-graph.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { InpatientSegmentationComponent } from './inpatient-segmentation/inpatient-segmentation.component';
+import { NgxLinearGraphComponent } from './ngx-linear-graph/ngx-linear-graph.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { InpatientSegmentationComponent } from './inpatient-segmentation/inpatie
     EpidemiologicGraphComponent,
     PieChartComponent,
     InpatientSegmentationComponent,
+    NgxLinearGraphComponent,
   ],
 })
 export class DashboardModule {}
