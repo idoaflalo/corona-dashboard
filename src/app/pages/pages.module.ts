@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NbMenuModule } from '@nebular/theme';
+import { NbMenuModule, NbSidebarModule } from '@nebular/theme';
 
 import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
@@ -12,10 +12,8 @@ import { PagesRoutingModule } from './pages-routing.module';
     ThemeModule,
     NbMenuModule,
     DashboardModule,
+    NbSidebarModule,
   ],
-  declarations: [
-    PagesComponent,
-  ],
+  declarations: [PagesComponent],
 })
-export class PagesModule {
-}
+export class PagesModule {}

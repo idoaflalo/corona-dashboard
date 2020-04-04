@@ -2,40 +2,5 @@
 @import '~bootstrap/scss/mixins/breakpoints';
 @import '~@nebular/theme/styles/global/breakpoints';
 @include nb-install-component() {
-    .menu-sidebar ::ng-deep .scrollable {
-        padding-top: nb-theme(layout-padding-top);
-    }
-    .menu-sidebar {
-        background: #24343f;
-        box-shadow: 0 0 6px black;
-    }
-    .menu-sidebar,
-     ::ng-deep .main-container {
-        width: 80px;
-    }
-     ::ng-deep li a {
-        width: 80px;
-        display: flex;
-        height: 80px;
-        flex-direction: column;
-        font-size: 14px;
-        justify-content: center;
-        text-align: center;
-        color: #bebebe;
-        font-weight: 400;
-        nb-icon {
-            font-size: 2rem !important;
-            margin: 0 !important;
-            color: #1ed6e0 !important;
-        }
-        span {
-            margin-top: 4px;
-            width: 80px;
-            text-align: center !important;
-        }
-        &.active {
-            border-right: 3px solid #1ed6e0;
-            color: white !important;
-        }
-    }
+
 }
