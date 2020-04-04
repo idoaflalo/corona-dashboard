@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NbCardModule } from '@nebular/theme';
+import { NbCardModule, NbTreeGridModule } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 
 import { ThemeModule } from '../../@theme/theme.module';
@@ -9,12 +9,14 @@ import { EpidemiologicGraphComponent } from './epidemiologic-graph/epidemiologic
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { InpatientSegmentationComponent } from './inpatient-segmentation/inpatient-segmentation.component';
 import { NgxLinearGraphComponent } from './ngx-linear-graph/ngx-linear-graph.component';
+import { ContagionAreasComponent } from './contagion-areas/contagion-areas.component';
 
 @NgModule({
   imports: [
     NbCardModule,
     ThemeModule,
     NgxEchartsModule,
+    NbTreeGridModule,
   ],
   declarations: [
     DashboardComponent,
@@ -23,6 +25,7 @@ import { NgxLinearGraphComponent } from './ngx-linear-graph/ngx-linear-graph.com
     PieChartComponent,
     InpatientSegmentationComponent,
     NgxLinearGraphComponent,
+    ContagionAreasComponent,
   ],
 })
 export class DashboardModule {}
