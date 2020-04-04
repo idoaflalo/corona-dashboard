@@ -19,7 +19,7 @@ export class PieChartComponent implements AfterViewInit {
         left: 'center',
         top: 'bottom',
         data: this.data,
-        formatter: function (name: string) {
+        formatter: (name: string) => {
           const item = this.data.find((v: PieChartData) => v.name === name);
           return name + ': ' + item.value;
         },
@@ -29,6 +29,10 @@ export class PieChartComponent implements AfterViewInit {
           type: 'pie',
           radius: ['50%', '70%'],
           data: this.data,
+          label: {
+            formatter: '{c}',
+            fontWeight: 'bold',
+          },
           emphasis: {
             itemStyle: {
               shadowBlur: 10,
@@ -39,5 +43,9 @@ export class PieChartComponent implements AfterViewInit {
         },
       ],
     };
+  }
+
+  get sum() {
+    return this.data.reduce((pre, cur) => pre + cur.value, 0);
   }
 }

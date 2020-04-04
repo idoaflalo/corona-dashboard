@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NgxEchartsModule } from 'ngx-echarts';
 
 import { DoughnutPieStatisticComponent } from './doughnut-pie-statistic.component';
+import { DashboardModule } from '../dashboard.module';
+
 
 describe('DoughnutPieStatisticComponent', () => {
   let component: DoughnutPieStatisticComponent;
@@ -9,8 +10,7 @@ describe('DoughnutPieStatisticComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [DoughnutPieStatisticComponent],
-      imports: [NgxEchartsModule],
+      imports: [DashboardModule],
     }).compileComponents();
   }));
 

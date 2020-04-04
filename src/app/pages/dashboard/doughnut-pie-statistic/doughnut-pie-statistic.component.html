@@ -1,19 +1,16 @@
-<div class="heading row">
-  <div class="col-9">
-    <h6>סה"כ נבדקים</h6>
-    <h5 class="total-amount">3324</h5>
-    <p class="changes">
-      <span class="amount">+103</span>
-      <span>מאתמול</span>
-      <span class="percentage">+2.5%</span>
-    </p>
-  </div>
-
-  <div class="chart-container col-3" echarts [options]="chartOption"></div>
-</div>
+<ngx-small-statistics-info
+  [title]="config.title"
+  [totalAmount]="3324"
+  [changeType]="'negative'"
+  [changeSign]="'plus'"
+  [changeAmount]="103"
+  [changePercantage]="2.5"
+>
+  <div class="chart-container" echarts [options]="chartOption"></div>
+</ngx-small-statistics-info>
 
 <div class="legend row">
-  <div *ngFor="let item of data" class="legend-item">
+  <div *ngFor="let item of config.data" class="legend-item">
     <div class="legend-item-color" [style.background-color]="item.color"></div>
     <div class="legend-item-info">
       <span class="label">{{item.name}}</span>
