@@ -4,7 +4,7 @@
     <h5 class="total-amount">{{totalAmount}}</h5>
     <p class="changes">
       <span class="amount">
-        {{changeSignText}}{{changeAmount}}
+        {{changeSignText}}{{changeAmount | ngxNumberWithCommas}}
       </span>
       <span>מאתמול</span>
       <span class="percentage {{changeType}}">
