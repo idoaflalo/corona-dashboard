@@ -1,7 +1,7 @@
 <nb-card>
   <nb-card-header>איזורי התפשטות</nb-card-header>
   <nb-card-body>
-    <table [nbTreeGrid]="dataSource" nbSort (sort)="changeSort($event)" equalColumnsWidth style="max-height: 200px;">
+    <table [nbTreeGrid]="dataSource" nbSort (sort)="changeSort($event)">
 
       <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns"></tr>
       <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: allColumns"></tr>
