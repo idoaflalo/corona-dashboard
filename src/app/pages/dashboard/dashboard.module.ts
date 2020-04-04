@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NbCardModule } from '@nebular/theme';
+import { NbCardModule, NbIconModule, NbButtonModule } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 
 import { ThemeModule } from '../../@theme/theme.module';
@@ -11,6 +11,8 @@ import { SmallGraphStatisticComponent } from './small-graph-statistic/small-grap
 @NgModule({
   imports: [
     NbCardModule,
+    NbIconModule,
+    NbButtonModule,
     ThemeModule,
     NgxEchartsModule,
   ],
