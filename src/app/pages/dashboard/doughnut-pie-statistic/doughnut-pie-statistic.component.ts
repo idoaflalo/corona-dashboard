@@ -8,20 +8,21 @@ import { EChartOption } from 'echarts';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DoughnutPieStatisticComponent {
+  public readonly data = [
+    { value: 1780, label: 'קל' },
+    { value: 1780, label: 'בינוני' },
+    { value: 400, label: 'קשה' },
+  ];
   public readonly chartOption = {
     series: [
       {
         type: 'pie',
-        radius: ['70%', '100%'],
+        radius: ['75%', '100%'],
         label: {
           show: false,
         },
         animation: false,
-        data: [
-          { value: 1780 },
-          { value: 1780 },
-          { value: 400 },
-        ],
+        data: this.data,
       } as EChartOption.SeriesPie,
     ],
   };

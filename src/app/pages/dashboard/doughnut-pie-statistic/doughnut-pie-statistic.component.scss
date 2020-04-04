@@ -30,3 +30,13 @@
   height: 60px;
   width: 60px;
 }
+
+.legend {
+  margin-top: 6px;
+}
+
+.legend-item {
+  & > .label {
+    font-size: 0.9em;
+  }
+}
