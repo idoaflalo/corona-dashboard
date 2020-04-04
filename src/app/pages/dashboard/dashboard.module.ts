@@ -9,6 +9,7 @@ import { EpidemiologicGraphComponent } from './epidemiologic-graph/epidemiologic
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { InpatientSegmentationComponent } from './inpatient-segmentation/inpatient-segmentation.component';
 import { NgxLinearGraphComponent } from './ngx-linear-graph/ngx-linear-graph.component';
+import { CoronaMapComponent } from './corona-map/corona-map.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { NgxLinearGraphComponent } from './ngx-linear-graph/ngx-linear-graph.com
     PieChartComponent,
     InpatientSegmentationComponent,
     NgxLinearGraphComponent,
+    CoronaMapComponent
   ],
 })
 export class DashboardModule {}
