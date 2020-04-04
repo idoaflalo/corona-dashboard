@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, AfterViewInit } from '@angular/core';
 import { PieChartData } from './interfaces';
 
 @Component({
@@ -6,7 +6,7 @@ import { PieChartData } from './interfaces';
   templateUrl: './pie-chart.component.html',
   styleUrls: ['./pie-chart.component.scss'],
 })
-export class PieChartComponent {
+export class PieChartComponent implements AfterViewInit {
   options: any = {};
   @Input() data: PieChartData[] = [];
 
@@ -20,7 +20,7 @@ export class PieChartComponent {
         top: 'bottom',
         data: this.data,
         formatter: function (name: string) {
-          const item = this.data.find((v: PieChartData) => v.name == name);
+          const item = this.data.find((v: PieChartData) => v.name === name);
           return name + ': ' + item.value;
         },
       },

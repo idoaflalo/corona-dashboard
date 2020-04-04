@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { PieChartData } from '../pie-chart/interfaces';
 
 @Component({
-  selector: 'inpatient-segmentation',
+  selector: 'ngx-inpatient-segmentation',
   templateUrl: './inpatient-segmentation.component.html',
   styleUrls: ['./inpatient-segmentation.component.scss'],
 })
