@@ -4,7 +4,7 @@
 }
 
 @include nb-install-component() {
-     ::ng-deep router-outlet + * {
+     ::ng-deep router-outlet+* {
         display: block;
         animation: fade 1s;
         @keyframes fade {
@@ -45,6 +45,7 @@
             color: #1ed6e0 !important;
         }
         span {
+            font-size: 12px;
             margin-top: 4px;
             width: 80px;
             text-align: center !important;
