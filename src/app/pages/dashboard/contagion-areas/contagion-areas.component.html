@@ -1,8 +1,13 @@
-<table [nbTreeGrid]="data" equalColumnsWidth style="height: 400px">
-  <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: columns"></tr>
-  <ng-container *ngFor="let column of columns" [nbTreeGridColumnDef]="column">
-    <td nbTreeGridCell *nbTreeGridCellDef="let row">
-      {{row[column]}}
-    </td>
+<table [nbTreeGrid]="dataSource" nbSort (sort)="changeSort($event)" equalColumnsWidth style="max-height: 200px;">
+
+  <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns"></tr>
+  <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: allColumns"></tr>
+
+  <ng-container *ngFor="let column of allColumns" [nbTreeGridColumnDef]="column">
+    <th nbTreeGridHeaderCell [nbSortHeader]="getDirection(column)" *nbTreeGridHeaderCellDef>
+      {{columnsNameValueMap[column]}}
+    </th>
+    <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data[column]}}</td>
   </ng-container>
+
 </table>
