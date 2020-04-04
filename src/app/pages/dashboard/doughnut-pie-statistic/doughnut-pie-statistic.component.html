@@ -11,3 +11,13 @@
 
   <div class="chart-container col-3" echarts [options]="chartOption"></div>
 </div>
+
+<div class="legend row">
+  <div *ngFor="let item of data" class="legend-item">
+    <div class="legend-item-color" [style.background-color]="item.color"></div>
+    <div class="legend-item-info">
+      <span class="label">{{item.name}}</span>
+      <strong>{{item.value}}</strong>
+    </div>
+  </div>
+</div>
