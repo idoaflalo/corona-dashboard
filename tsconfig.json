@@ -20,6 +20,5 @@
     "plugins": [
       { "name": "tslint-language-service"}
     ],
-    "paths": { "@angular/*": ["./node_modules/@angular/*"] }
   }
 }
