@@ -1,5 +1,16 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { EChartOption } from 'echarts';
+
+export interface ChartStatisticData {
+  value: number;
+  name: string;
+  color: string;
+}
+
+export interface DoughnutStatsticConfig {
+  title: string;
+  data: ChartStatisticData[];
+}
 
 @Component({
   selector: 'ngx-doughnut-pie-statistic',
@@ -8,26 +19,34 @@ import { EChartOption } from 'echarts';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DoughnutPieStatisticComponent {
-  public readonly title = 'סה"כ נבדקים';
+  private _config: DoughnutStatsticConfig;
+  @Input() set config(config: DoughnutStatsticConfig) {
+    this._config = config;
+    if (config != null) {
+      this.updateChartOption();
+    }
+  }
+  get config() {
+    return this._config;
+  }
 
-  public readonly data = [
-    { value: 1780, name: 'קל', color: '#4AB988' },
-    { value: 1780, name: 'בינוני', color: '#E6B957' },
-    { value: 400, name: 'קשה', color: '#FB5377' },
-  ];
+  public chartOption!: EChartOption<EChartOption.SeriesPie>;
 
-  public readonly chartOption: EChartOption<EChartOption.SeriesPie> = {
-    series: [
-      {
-        type: 'pie',
-        radius: ['75%', '100%'],
-        label: {
-          show: false,
+  private updateChartOption() {
+    const {data} = this.config;
+    this.chartOption = {
+      series: [
+        {
+          type: 'pie',
+          radius: ['75%', '100%'],
+          label: {
+            show: false,
+          },
+          animation: false,
+          data: data,
         },
-        animation: false,
-        data: this.data,
-      },
-    ],
-    color: this.data.map(item => item.color),
-  };
+      ],
+      color: data.map(item => item.color),
+    };
+  }
 }

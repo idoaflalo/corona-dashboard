@@ -1,5 +1,5 @@
 <ngx-small-statistics-info
-  [title]="title"
+  [title]="config.title"
   [totalAmount]="3324"
   [changeType]="'negative'"
   [changeSign]="'plus'"
@@ -10,7 +10,7 @@
 </ngx-small-statistics-info>
 
 <div class="legend row">
-  <div *ngFor="let item of data" class="legend-item">
+  <div *ngFor="let item of config.data" class="legend-item">
     <div class="legend-item-color" [style.background-color]="item.color"></div>
     <div class="legend-item-info">
       <span class="label">{{item.name}}</span>
