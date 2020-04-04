@@ -1,40 +1,9 @@
-.heading > div {
-  padding: 0;
-}
-
-.total-amount,
-.changes {
-  margin: 0;
-}
-
-.total-amount {
-  line-height: 1.1;
-}
-
-.changes {
-  font-size: 0.8em;
-
-  & > span {
-    padding: 0 2px;
-  }
-
-  & > .amount,
-  & > .percentage {
-    font-weight: bold;
-  }
-
-  & > .percentage {
-    color: #409293;
-  }
-}
-
 .chart-container {
   height: 60px;
-  width: 60px;
 }
 
 .legend {
-  margin-top: 6px;
+  margin-top: 16px;
   display: flex;
   max-width: 200px;
   justify-content: space-between;

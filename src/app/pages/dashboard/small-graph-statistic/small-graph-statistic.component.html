@@ -1,0 +1,15 @@
+<ngx-small-statistics-info
+  [title]="config.title"
+  [totalAmount]="2242"
+  [changeType]="'negative'"
+  [changeSign]="'plus'"
+  [changeAmount]="132"
+  [changePercantage]="9.5"
+></ngx-small-statistics-info>
+
+<div class="chart-container row" echarts [options]="chartOption"></div>
+
+<button nbButton class="show-trend" ghost status="basic" size="small">
+  <nb-icon icon="bar-chart-2-outline"></nb-icon>
+  <span>מגמת שינוי</span>
+</button>

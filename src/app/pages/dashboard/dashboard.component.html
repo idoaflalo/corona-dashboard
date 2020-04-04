@@ -5,7 +5,24 @@
   >
     <nb-card>
       <nb-card-body>
-        <ngx-doughnut-pie-statistic></ngx-doughnut-pie-statistic>
+        <ngx-doughnut-pie-statistic
+          [config]="statisticConfig"
+        ></ngx-doughnut-pie-statistic>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
+    <nb-card>
+      <nb-card-body>
+        <ngx-small-graph-statistic
+          [config]="{
+            title: 'נפטרו',
+            data: {
+              color: '#FDA0B4',
+              value: [0.4, 0.5, 1, 1.2, 1.5, 1.6]
+            }
+          }"
+        ></ngx-small-graph-statistic>
       </nb-card-body>
     </nb-card>
   </div>
@@ -15,9 +32,12 @@
     <ngx-epidemiologic-graph></ngx-epidemiologic-graph>
   </div>
   <div class="col-md-5">
-    <nb-card>
-      <nb-card-body>Hello from ngx-admin sandbox project.</nb-card-body>
-    </nb-card>
+    <ngx-corona-map></ngx-corona-map>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <ngx-inpatient-segmentation></ngx-inpatient-segmentation>
   </div>
 </div>
 <div class="row">
