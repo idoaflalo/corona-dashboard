@@ -39,13 +39,13 @@ export class ContagionAreasComponent {
 
   private data: TreeNode<ContagionAreaEntry>[] = [
     {
-      data: { location: 'הרצליה', sickCount: 6, percentageGrowth: 20, percentagePopulation: 10, isolatedCount: 100 },
+      data: { location: 'הרצליה', sickCount: 6, percentageGrowth: '20%', percentagePopulation: '10%', isolatedCount: 100 },
     },
     {
-      data: { location: 'בארותיים', sickCount: 10, percentageGrowth: 25, percentagePopulation: 99, isolatedCount: 400 },
+      data: { location: 'בארותיים', sickCount: 10, percentageGrowth: '25%', percentagePopulation: '99%', isolatedCount: 400 },
     },
     {
-      data: { location: 'עזה', sickCount: 9999, percentageGrowth: 50, percentagePopulation: 80, isolatedCount: 5000 },
+      data: { location: 'עזה', sickCount: 9999, percentageGrowth: '50%', percentagePopulation: '80%', isolatedCount: 5000 },
     },
   ];
 }

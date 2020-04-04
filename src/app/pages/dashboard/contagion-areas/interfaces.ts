@@ -8,7 +8,7 @@ export interface TreeNode<T> {
 export interface ContagionAreaEntry {
   location: string;
   sickCount: number;
-  percentageGrowth: number;
-  percentagePopulation: number;
+  percentageGrowth: string;
+  percentagePopulation: string;
   isolatedCount: number;
 }
