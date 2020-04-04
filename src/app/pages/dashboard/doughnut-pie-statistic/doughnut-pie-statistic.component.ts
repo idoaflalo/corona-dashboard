@@ -9,11 +9,12 @@ import { EChartOption } from 'echarts';
 })
 export class DoughnutPieStatisticComponent {
   public readonly data = [
-    { value: 1780, label: 'קל' },
-    { value: 1780, label: 'בינוני' },
-    { value: 400, label: 'קשה' },
+    { value: 1780, name: 'קל', color: '#4AB988' },
+    { value: 1780, name: 'בינוני', color: '#E6B957' },
+    { value: 400, name: 'קשה', color: '#FB5377' },
   ];
-  public readonly chartOption = {
+
+  public readonly chartOption: EChartOption<EChartOption.SeriesPie> = {
     series: [
       {
         type: 'pie',
@@ -23,7 +24,8 @@ export class DoughnutPieStatisticComponent {
         },
         animation: false,
         data: this.data,
-      } as EChartOption.SeriesPie,
+      },
     ],
+    color: this.data.map(item => item.color),
   };
 }

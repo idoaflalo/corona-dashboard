@@ -2,7 +2,8 @@
   padding: 0;
 }
 
-.total-amount, .changes {
+.total-amount,
+.changes {
   margin: 0;
 }
 
@@ -17,7 +18,8 @@
     padding: 0 2px;
   }
 
-  & > .amount, & > .percentage {
+  & > .amount,
+  & > .percentage {
     font-weight: bold;
   }
 
@@ -33,10 +35,28 @@
 
 .legend {
   margin-top: 6px;
+  display: flex;
+  max-width: 200px;
+  justify-content: space-between;
 }
 
 .legend-item {
-  & > .label {
+  display: flex;
+  align-items: flex-start;
+}
+
+.legend-item-color {
+  margin: 5px 3px;
+  display: inline-block;
+  padding: 3px;
+  border-radius: 50%;
+}
+
+.legend-item-info {
+  display: flex;
+  flex-direction: column;
+
+  .label {
     font-size: 0.9em;
   }
 }
