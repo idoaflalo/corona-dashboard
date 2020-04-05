@@ -3,7 +3,7 @@ import { NbThemeService } from '@nebular/theme';
 import { HttpClient } from '@angular/common/http';
 import { combineLatest } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
-import { registerMap } from 'echarts';
+import { registerMap, Graphic } from 'echarts';
 
 @Component({
   selector: 'ngx-corona-map',
@@ -36,6 +36,23 @@ export class CoronaMapComponent implements OnDestroy {
         ];
 
         this.options = {
+          backgroundColor: {
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            colorStops: [
+              {
+                offset: 0,
+                color: '#4b5769',
+              },
+              {
+                offset: 1,
+                color: '#404a59',
+              },
+            ],
+          },
           tooltip: {
             trigger: 'item',
             formatter: (params) => {
@@ -71,11 +88,7 @@ export class CoronaMapComponent implements OnDestroy {
               data: israel.map((item) => {
                 return {
                   name: item.name,
-                  value: [
-                    item.coordinates[0],
-                    item.coordinates[1],
-                    1,
-                  ],
+                  value: [item.coordinates[0], item.coordinates[1], 1],
                   itemStyle: {
                     normal: {
                       color: geoColors[0],
