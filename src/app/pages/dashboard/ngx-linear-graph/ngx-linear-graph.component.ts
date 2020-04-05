@@ -8,9 +8,9 @@ import { LinearGraphData } from './interfaces';
   styleUrls: ['./ngx-linear-graph.component.scss'],
 })
 export class NgxLinearGraphComponent implements AfterViewInit, OnDestroy {
+  @Input() data: LinearGraphData[] = [];
   options: any = {};
   themeSubscription: any;
-  @Input() data: LinearGraphData[] = [];
 
   constructor(private theme: NbThemeService) {}
 
