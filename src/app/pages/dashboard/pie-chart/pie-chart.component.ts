@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { PieChartData } from './interfaces';
+import { EChartOption } from 'echarts';
 
 @Component({
   selector: 'ngx-pie-chart',
@@ -14,7 +15,7 @@ export class PieChartComponent {
   get data() {
     return this._data;
   }
-  public options: any = {};
+  public options: EChartOption<EChartOption.SeriesPie> = {};
   public sum: number = 0;
   private _data: PieChartData[] = [];
 
@@ -35,7 +36,7 @@ export class PieChartComponent {
       series: [
         {
           type: 'pie',
-          radius: ['50%', '70%'],
+          radius: ['40%', '50%'],
           data: data,
           label: {
             formatter: '{c}',

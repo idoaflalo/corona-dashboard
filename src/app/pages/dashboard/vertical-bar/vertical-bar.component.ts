@@ -2,11 +2,11 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { EChartOption } from 'echarts';
 
 const steps = [0, 18, 30, 42, 55, 67];
-const yAxisData = steps.map((step, i, arr) => (
+const yAxisData = steps.map((step, i, arr) =>
   i === arr.length - 1
     ? `+${step}`
-    : `${step + (i === 0 ? 0 : 1)}-${steps[i + 1]}`
-));
+    : `${step + (i === 0 ? 0 : 1)}-${steps[i + 1]}`,
+);
 
 @Component({
   selector: 'ngx-vertical-bar',
@@ -17,7 +17,7 @@ const yAxisData = steps.map((step, i, arr) => (
 export class VerticalBarComponent {
   @Input() leftColor: string;
   @Input() rightColor: string;
-  @Input() data: Array<{ left: number; right: number }>;
+  @Input() data: Array<{ label: string; left: number; right: number }>;
 
   public chartOption: EChartOption<EChartOption.SeriesBar> = {
     tooltip: {
@@ -33,20 +33,40 @@ export class VerticalBarComponent {
       left: '3%',
       right: '4%',
       bottom: '3%',
+      top: '3%',
       containLabel: true,
     },
     xAxis: [
       {
         type: 'value',
+        axisLine: {
+          show: false,
+        },
+        axisPointer: {
+          show: false,
+        },
+        axisLabel: {
+          formatter: Math.abs,
+        },
+        splitLine: {
+          lineStyle: {
+            opacity: 0.5,
+          },
+        },
       },
     ],
     yAxis: [
       {
         type: 'category',
-        axisTick: {
-          show: false,
-        },
         data: yAxisData,
+        nameLocation: 'center',
+        splitLine: {
+          show: true,
+          lineStyle: {
+            // type: 'dashed',
+            opacity: 0.5,
+          },
+        },
       },
     ],
     series: [
@@ -56,6 +76,7 @@ export class VerticalBarComponent {
         stack: 'main',
         itemStyle: {
           barBorderRadius: [0, 5, 5, 0],
+          color: '#48CAFF',
         },
         barWidth: 8,
         label: {
@@ -69,6 +90,7 @@ export class VerticalBarComponent {
         stack: 'main',
         itemStyle: {
           barBorderRadius: [5, 0, 0, 5],
+          color: '#B6CA51',
         },
         barWidth: 8,
         label: {
