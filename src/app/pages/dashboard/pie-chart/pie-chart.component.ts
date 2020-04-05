@@ -23,9 +23,6 @@ export class PieChartComponent {
       textStyle: {
         fontFamily: 'Open Sans Hebrew',
       },
-      grid: {
-        top: 500,
-      },
       legend: {
         left: 'center',
         top: 'bottom',
@@ -40,11 +37,11 @@ export class PieChartComponent {
           type: 'pie',
           radius: ['50%', '60%'],
           data: data,
-          top: -75,
+          top: -50,
           label: {
             formatter: '{c}',
             fontWeight: 'bold',
-            // fontSize: 15,
+            fontSize: 15,
           },
           emphasis: {
             itemStyle: {
