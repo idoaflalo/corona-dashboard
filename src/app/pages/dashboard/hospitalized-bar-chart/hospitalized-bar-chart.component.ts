@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'hospitalized-bar-chart',
+  selector: 'ngx-hospitalized-bar-chart',
   templateUrl: './hospitalized-bar-chart.component.html',
-  styleUrls: ['./hospitalized-bar-chart.component.css']
+  styleUrls: ['./hospitalized-bar-chart.component.scss'],
 })
 export class HospitalizedBarChartComponent implements OnInit {
 
