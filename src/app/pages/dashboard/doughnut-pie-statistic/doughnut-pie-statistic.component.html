@@ -1,0 +1,20 @@
+<ngx-small-statistics-info
+  [title]="config.title"
+  [totalAmount]="totalAmount"
+  [changeType]="'negative'"
+  [changeSign]="'plus'"
+  [changeAmount]="config.changeAmount"
+  [changePercantage]="config.changePercantage"
+>
+  <div class="chart-container" echarts [options]="chartOption"></div>
+</ngx-small-statistics-info>
+
+<div class="legend row">
+  <div *ngFor="let item of config.data" class="legend-item">
+    <div class="legend-item-color" [style.background-color]="item.color"></div>
+    <div class="legend-item-info">
+      <span class="label">{{item.name}}</span>
+      <strong>{{item.value}}</strong>
+    </div>
+  </div>
+</div>

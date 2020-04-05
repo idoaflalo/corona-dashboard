@@ -1,0 +1,31 @@
+.chart-container {
+  height: 60px;
+}
+
+.legend {
+  margin-top: 16px;
+  display: flex;
+  max-width: 200px;
+  justify-content: space-between;
+}
+
+.legend-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.legend-item-color {
+  margin: 5px 3px;
+  display: inline-block;
+  padding: 3px;
+  border-radius: 50%;
+}
+
+.legend-item-info {
+  display: flex;
+  flex-direction: column;
+
+  .label {
+    font-size: 0.9em;
+  }
+}

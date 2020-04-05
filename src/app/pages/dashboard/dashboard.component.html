@@ -1,5 +1,31 @@
 <div class="row">
-  <nb-card>
-    <nb-card-body>Hello from ngx-admin sandbox project.</nb-card-body>
-  </nb-card>
+  <div
+    *ngFor="let statisticConfig of infetedInfoStatisticConfigs"
+    class="col-12 col-sm-6 col-md-4 col-xxl-2"
+  >
+    <nb-card>
+      <nb-card-body>
+        <ngx-doughnut-pie-statistic
+          [config]="statisticConfig"
+        ></ngx-doughnut-pie-statistic>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-12 col-sm-6 col-md-4 col-xxl-2">
+    <nb-card>
+      <nb-card-body>
+        <ngx-small-graph-statistic
+          [config]="{
+            title: 'נפטרו',
+            changeAmount: 132,
+            changePercantage: 9.5,
+            data: {
+              color: '#FDA0B4',
+              value: [400, 450, 550, 900, 1000, 1020]
+            }
+          }"
+        ></ngx-small-graph-statistic>
+      </nb-card-body>
+    </nb-card>
+  </div>
 </div>

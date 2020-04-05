@@ -1,0 +1,19 @@
+<div class="heading row">
+  <div class="col-9">
+    <h6>{{title}}</h6>
+    <h5 class="total-amount">{{totalAmount | ngxNumberWithCommas}}</h5>
+    <p class="changes">
+      <span class="amount">
+        {{changeSignText}}{{changeAmount | ngxNumberWithCommas}}
+      </span>
+      <span>מאתמול</span>
+      <span class="percentage {{changeType}}">
+        {{changeSignText}}{{changePercantage}}%
+      </span>
+    </p>
+  </div>
+
+  <div class="col-3">
+    <ng-content></ng-content>
+  </div>
+</div>

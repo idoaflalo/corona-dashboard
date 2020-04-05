@@ -1,0 +1,36 @@
+@import '~app/@theme/styles/themes';
+
+.heading > div {
+  padding: 0;
+}
+
+.total-amount,
+.changes {
+  margin: 0;
+}
+
+.total-amount {
+  line-height: 1.1;
+}
+
+.changes {
+  font-size: 0.8em;
+
+  & > span {
+    padding: 0 2px;
+  }
+
+  & > .amount,
+  & > .percentage {
+    font-weight: bold;
+  }
+
+  & > .percentage {
+    &.positive {
+      color: var(--ngx-negative-color);
+    }
+    &.negative {
+      color: var(--ngx-negative-color);
+    }
+  }
+}
