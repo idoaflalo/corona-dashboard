@@ -1,0 +1,19 @@
+nb-card-header,
+.legend {
+  display: flex;
+}
+
+nb-card-header {
+  justify-content: space-between;
+}
+
+.legend-item {
+  margin: 0 6px;
+}
+
+.legend-circle {
+  margin: 0 2px;
+  padding: 5px;
+  display: inline-block;
+  border-radius: 50%;
+}
