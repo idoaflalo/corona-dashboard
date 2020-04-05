@@ -8,6 +8,17 @@ import { PieChartData } from './interfaces';
 })
 export class PieChartComponent {
   @Input() set data(value: PieChartData[]) {
+    this._data = value;
+    this.initializeData(value);
+  }
+  get data() {
+    return this._data;
+  }
+  public options: any = {};
+  public sum: number = 0;
+  private _data: PieChartData[] = [];
+
+  private initializeData(data: PieChartData[]) {
     this.options = {
       textStyle: {
         fontFamily: 'Open Sans Hebrew',
@@ -15,9 +26,9 @@ export class PieChartComponent {
       legend: {
         left: 'center',
         top: 'bottom',
-        data: value,
+        data: data,
         formatter: (name: string) => {
-          const item = value.find((v: PieChartData) => v.name === name);
+          const item = data.find((v: PieChartData) => v.name === name);
           return name + ': ' + item.value;
         },
       },
@@ -25,7 +36,7 @@ export class PieChartComponent {
         {
           type: 'pie',
           radius: ['50%', '70%'],
-          data: value,
+          data: data,
           label: {
             formatter: '{c}',
             fontWeight: 'bold',
@@ -40,12 +51,6 @@ export class PieChartComponent {
         },
       ],
     };
-    this.sum = value.reduce((pre, cur) => pre + cur.value, 0);
+    this.sum = data.reduce((pre, cur) => pre + cur.value, 0);
   }
-  get data() {
-    return this._data;
-  }
-  public options: any = {};
-  public sum: number = 0;
-  private _data: PieChartData[] = [];
 }
