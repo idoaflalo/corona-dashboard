@@ -1,7 +1,7 @@
 import { Directive, AfterViewInit, ViewContainerRef } from '@angular/core';
 
 @Directive({
-  selector: '[ngxExplictCurrentHeight]',
+  selector: '[ngxExplicitCurrentHeight]',
 })
 export class ExplictCurrentHeightDirective implements AfterViewInit {
   constructor(private viewRef: ViewContainerRef) {}
