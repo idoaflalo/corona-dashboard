@@ -7,8 +7,8 @@ import { PieChartData } from './interfaces';
   styleUrls: ['./pie-chart.component.scss'],
 })
 export class PieChartComponent implements AfterViewInit {
-  options: any = {};
   @Input() data: PieChartData[] = [];
+  public options: any = {};
 
   ngAfterViewInit() {
     this.options = {
