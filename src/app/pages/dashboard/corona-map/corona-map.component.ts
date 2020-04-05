@@ -36,6 +36,9 @@ export class CoronaMapComponent implements OnDestroy {
         ];
 
         this.options = {
+          textStyle: {
+            fontFamily: 'Open Sans Hebrew',
+          },
           backgroundColor: {
             type: 'linear',
             x: 0,
@@ -78,8 +81,8 @@ export class CoronaMapComponent implements OnDestroy {
                 areaColor: bubbleTheme.areaHoverColor,
               },
             },
-            center: [34.979229, 31.259451],
-            zoom: 35,
+            center: [34.979229, 31.859451],
+            zoom: 100,
           },
           series: [
             {

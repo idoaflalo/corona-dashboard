@@ -1,0 +1,18 @@
+div {
+    height: 389px;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 0;
+    .info {
+        flex: 0.5;
+    }
+    .map {
+        flex: 0.5;
+    }
+}
