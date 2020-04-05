@@ -1,12 +1,23 @@
 <nb-card size="small">
   <nb-card-header>
-    פיזור חולים גיל מגדר
+    <div>פיזור חולים גיל מגדר</div>
+    <div class="legend">
+      <div class="legend-item">
+        <span class="legend-circle" [style.background-color]="'#48caff'"></span>
+        גברים
+      </div>
+      <div class="legend-item">
+        <span class="legend-circle" [style.background-color]="'#b6ca51'"></span>
+        נשים
+      </div>
+    </div>
   </nb-card-header>
 
   <nb-card-body>
     <ngx-vertical-bar
-      leftColor="#b6ca51"
       rightColor="#48caff"
+      leftColor="#b6ca51"
+      [data]="verticalTabData"
     ></ngx-vertical-bar>
   </nb-card-body>
 </nb-card>
