@@ -13,6 +13,7 @@ import { ContagionAreasComponent } from './contagion-areas/contagion-areas.compo
 import { CoronaMapComponent } from './corona-map/corona-map.component';
 import { SmallStatisticsInfoComponent } from './small-statistics-info/small-statistics-info.component';
 import { SmallGraphStatisticComponent } from './small-graph-statistic/small-graph-statistic.component';
+import { HospitalizedBarChartComponent } from './hospitalized-bar-chart/hospitalized-bar-chart.component';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { SmallGraphStatisticComponent } from './small-graph-statistic/small-grap
     CoronaMapComponent,
     SmallStatisticsInfoComponent,
     SmallGraphStatisticComponent,
+    HospitalizedBarChartComponent,
   ],
 })
 export class DashboardModule {}
