@@ -1,6 +1,6 @@
-<nb-card>
+<nb-card class="body-container">
   <nb-card-header>איזורי התפשטות</nb-card-header>
-  <nb-card-body>
+  <nb-card-body class="padding-override">
     <table [nbTreeGrid]="dataSource" nbSort (sort)="changeSort($event)">
 
       <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns"></tr>

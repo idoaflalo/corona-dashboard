@@ -51,5 +51,20 @@ export class ContagionAreasComponent implements OnInit {
     {
       data: { location: 'עזה', sickCount: 9999, percentageGrowth: '50%', percentagePopulation: '80%', isolatedCount: 5000 },
     },
+    {
+      data: { location: 'עזה', sickCount: 9999, percentageGrowth: '50%', percentagePopulation: '80%', isolatedCount: 5000 },
+    },
+    {
+      data: { location: 'עזה', sickCount: 9999, percentageGrowth: '50%', percentagePopulation: '80%', isolatedCount: 5000 },
+    },
+    {
+      data: { location: 'עזה', sickCount: 9999, percentageGrowth: '50%', percentagePopulation: '80%', isolatedCount: 5000 },
+    },
+    {
+      data: { location: 'עזה', sickCount: 9999, percentageGrowth: '50%', percentagePopulation: '80%', isolatedCount: 5000 },
+    },
+    {
+      data: { location: 'עזה', sickCount: 9999, percentageGrowth: '50%', percentagePopulation: '80%', isolatedCount: 5000 },
+    },
   ];
 }
