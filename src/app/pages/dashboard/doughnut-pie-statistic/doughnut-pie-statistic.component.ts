@@ -1,9 +1,11 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { EChartOption } from 'echarts';
-import { ChartStatisticData } from '../../../@core/data/statistics';
+import {
+  ChartStatisticData,
+  ChangeAmountStatisticConfig,
+} from '../../../@core/data/statistics';
 
-export interface DoughnutStatsticConfig {
-  title: string;
+export interface DoughnutStatsticConfig extends ChangeAmountStatisticConfig {
   data: ChartStatisticData<number>[];
 }
 
@@ -18,6 +20,7 @@ export class DoughnutPieStatisticComponent {
   @Input() set config(config: DoughnutStatsticConfig) {
     this._config = config;
     if (config != null) {
+      this.updateTotalAmount();
       this.updateChartOption();
     }
   }
@@ -25,10 +28,18 @@ export class DoughnutPieStatisticComponent {
     return this._config;
   }
 
+  public totalAmount!: number;
   public chartOption!: EChartOption<EChartOption.SeriesPie>;
 
+  private updateTotalAmount() {
+    this.totalAmount = this.config.data.reduce(
+      (acc, item) => acc + item.value,
+      0,
+    );
+  }
+
   private updateChartOption() {
-    const {data} = this.config;
+    const { data } = this.config;
     this.chartOption = {
       series: [
         {
@@ -41,7 +52,7 @@ export class DoughnutPieStatisticComponent {
           data: data,
         },
       ],
-      color: data.map(item => item.color),
+      color: data.map((item) => item.color),
     };
   }
 }
