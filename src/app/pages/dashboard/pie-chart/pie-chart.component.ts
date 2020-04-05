@@ -6,11 +6,8 @@ import { PieChartData } from './interfaces';
   templateUrl: './pie-chart.component.html',
   styleUrls: ['./pie-chart.component.scss'],
 })
-export class PieChartComponent implements AfterViewInit {
-  @Input() data: PieChartData[] = [];
-  public options: any = {};
-
-  ngAfterViewInit() {
+export class PieChartComponent {
+  @Input() set data(value: PieChartData[]) {
     this.options = {
       textStyle: {
         fontFamily: 'Open Sans Hebrew',
@@ -18,9 +15,9 @@ export class PieChartComponent implements AfterViewInit {
       legend: {
         left: 'center',
         top: 'bottom',
-        data: this.data,
+        data: value,
         formatter: (name: string) => {
-          const item = this.data.find((v: PieChartData) => v.name === name);
+          const item = value.find((v: PieChartData) => v.name === name);
           return name + ': ' + item.value;
         },
       },
@@ -28,7 +25,7 @@ export class PieChartComponent implements AfterViewInit {
         {
           type: 'pie',
           radius: ['50%', '70%'],
-          data: this.data,
+          data: value,
           label: {
             formatter: '{c}',
             fontWeight: 'bold',
@@ -43,9 +40,12 @@ export class PieChartComponent implements AfterViewInit {
         },
       ],
     };
+    this.sum = value.reduce((pre, cur) => pre + cur.value, 0);
   }
-
-  get sum() {
-    return this.data.reduce((pre, cur) => pre + cur.value, 0);
+  get data() {
+    return this._data;
   }
+  public options: any = {};
+  public sum: number = 0;
+  private _data: PieChartData[] = [];
 }
