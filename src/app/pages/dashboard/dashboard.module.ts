@@ -14,7 +14,7 @@ import { CoronaMapComponent } from './corona-map/corona-map.component';
 import { SmallStatisticsInfoComponent } from './small-statistics-info/small-statistics-info.component';
 import { SmallGraphStatisticComponent } from './small-graph-statistic/small-graph-statistic.component';
 import { VerticalBarComponent } from './vertical-bar/vertical-bar.component';
-import { ExplictCurrentHeightDirective } from './explicit-current-height.directive';
+import { ExplicitCurrentHeightDirective } from './explicit-current-height.directive';
 import { InfectedByGenderComponent } from './infected-by-gender/infected-by-gender.component';
 
 @NgModule({
@@ -38,7 +38,7 @@ import { InfectedByGenderComponent } from './infected-by-gender/infected-by-gend
     SmallStatisticsInfoComponent,
     SmallGraphStatisticComponent,
     VerticalBarComponent,
-    ExplictCurrentHeightDirective,
+    ExplicitCurrentHeightDirective,
     InfectedByGenderComponent,
   ],
 })
