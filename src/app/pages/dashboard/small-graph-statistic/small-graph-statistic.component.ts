@@ -1,8 +1,11 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { EChartOption } from 'echarts';
-import { ChartStatisticData } from '../../../@core/data/statistics';
+import {
+  ChartStatisticData,
+  ChangeAmountStatisticConfig,
+} from '../../../@core/data/statistics';
 
-export interface SmallGraphStatisticConfig {
+export interface SmallGraphStatisticConfig extends ChangeAmountStatisticConfig {
   title: string;
   data: ChartStatisticData<number[]>;
 }
@@ -18,6 +21,7 @@ export class SmallGraphStatisticComponent {
   @Input() set config(config: SmallGraphStatisticConfig) {
     this._config = config;
     if (config != null) {
+      this.updateTotalAmount();
       this.updateChartOption();
     }
   }
@@ -25,7 +29,15 @@ export class SmallGraphStatisticComponent {
     return this._config;
   }
 
+  public totalAmount!: number;
   public chartOption!: EChartOption<EChartOption.SeriesLine>;
+
+  private updateTotalAmount() {
+    this.totalAmount = this.config.data.value.reduce(
+      (acc, item) => acc + item,
+      0,
+    );
+  }
 
   private updateChartOption() {
     const { data } = this.config;

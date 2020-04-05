@@ -1,10 +1,10 @@
 <ngx-small-statistics-info
   [title]="config.title"
-  [totalAmount]="3324"
+  [totalAmount]="totalAmount"
   [changeType]="'negative'"
   [changeSign]="'plus'"
-  [changeAmount]="103"
-  [changePercantage]="2.5"
+  [changeAmount]="config.changeAmount"
+  [changePercantage]="config.changePercantage"
 >
   <div class="chart-container" echarts [options]="chartOption"></div>
 </ngx-small-statistics-info>
