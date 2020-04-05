@@ -38,9 +38,11 @@ export class PieChartComponent {
           type: 'pie',
           radius: ['40%', '50%'],
           data: data,
+          top: -50,
           label: {
             formatter: '{c}',
             fontWeight: 'bold',
+            fontSize: 15,
           },
           emphasis: {
             itemStyle: {
