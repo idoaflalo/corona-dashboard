@@ -6,6 +6,8 @@
 $nb-enable-css-custom-properties: true;
 
 $nb-themes: nb-register-theme((
+  font-family-primary: Open Sans Hebrew,
+  font-family-secondary: Open Sans Hebrew,
   layout-padding-top: 2.25rem,
 
   menu-item-icon-margin: 0 0.5rem 0 0,

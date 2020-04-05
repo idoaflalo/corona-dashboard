@@ -3,6 +3,7 @@ import { DoughnutStatsticConfig } from './doughnut-pie-statistic/doughnut-pie-st
 
 @Component({
   selector: 'ngx-dashboard',
+  styleUrls: ['./dashboard.component.scss'],
   templateUrl: './dashboard.component.html',
 })
 export class DashboardComponent {

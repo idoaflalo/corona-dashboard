@@ -1,18 +1,61 @@
 @import '../@theme/styles/themes';
+:host {
+    display: flex;
+}
 
 @include nb-install-component() {
-  ::ng-deep router-outlet + * {
-    display: block;
-    animation: fade 1s;
-
-    @keyframes fade {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
+     ::ng-deep router-outlet + * {
+        display: block;
+        animation: fade 1s;
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     }
-  }
+    .menu-sidebar ::ng-deep .scrollable {
+        padding-top: 120px;
+    }
+    .menu-sidebar {
+        background: #24343f;
+        box-shadow: 0 0 6px black;
+    }
+    .menu-sidebar,
+     ::ng-deep .main-container {
+        width: 80px;
+        z-index: 99999;
+        position: unset !important;
+    }
+     ::ng-deep li a {
+        width: 80px;
+        display: flex;
+        height: 80px;
+        flex-direction: column;
+        font-size: 14px;
+        justify-content: center;
+        text-align: center;
+        color: #bebebe;
+        font-weight: 400;
+        nb-icon {
+            font-size: 2rem !important;
+            margin: 0 !important;
+            color: #1ed6e0 !important;
+        }
+        span {
+            font-size: 12px;
+            margin-top: 4px;
+            width: 80px;
+            text-align: center !important;
+        }
+        &.active {
+            border-right: 3px solid #1ed6e0;
+            color: white !important;
+        }
+    }
+    ngx-one-column-layout {
+        flex: 1;
+    }
 }
