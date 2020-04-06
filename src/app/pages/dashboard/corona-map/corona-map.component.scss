@@ -19,7 +19,18 @@
             line-height: var(--card-header-text-line-height);
         }
         .content {
-            padding: 0 10px;
+            padding: 10px;
+            .date-selection {
+              margin-bottom: 10px;
+            }
+            .options {
+              display: grid;
+              grid-template-columns: auto auto;
+              grid-gap: 10px;
+            }
+        }
+        .colors {
+
         }
     }
     .map {
