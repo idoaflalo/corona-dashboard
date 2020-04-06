@@ -27,22 +27,20 @@ export class PieChartComponent {
       legend: {
         left: 'center',
         top: 'bottom',
+        icon: 'circle',
         data: data,
-        formatter: (name: string) => {
-          const item = data.find((v: PieChartData) => v.name === name);
-          return name + ': ' + item.value;
-        },
+        align: 'right',
       },
       series: [
         {
           type: 'pie',
-          radius: ['40%', '50%'],
+          radius: ['50%', '60%'],
           data: data,
           center: ['50%', '40%'],
           label: {
             formatter: '{c}',
             fontWeight: 'bold',
-            fontSize: 15,
+            fontSize: 14,
           },
           emphasis: {
             itemStyle: {
