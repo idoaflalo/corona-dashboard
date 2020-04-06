@@ -3,7 +3,7 @@ import { NbThemeService } from '@nebular/theme';
 import { HttpClient } from '@angular/common/http';
 import { combineLatest } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
-import { registerMap, Graphic } from 'echarts';
+import { registerMap } from 'echarts';
 
 @Component({
   selector: 'ngx-corona-map',
