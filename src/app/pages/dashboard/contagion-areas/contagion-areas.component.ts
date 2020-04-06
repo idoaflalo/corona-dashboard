@@ -49,7 +49,22 @@ export class ContagionAreasComponent implements OnInit {
       data: { location: 'בארותיים', sickCount: 10, percentageGrowth: '25%', percentagePopulation: '99%', isolatedCount: 400 },
     },
     {
-      data: { location: 'עזה', sickCount: 9999, percentageGrowth: '50%', percentagePopulation: '80%', isolatedCount: 5000 },
+      data: { location: 'עזה', sickCount: 500, percentageGrowth: '1%', percentagePopulation: '80%', isolatedCount: 5000 },
+    },
+    {
+      data: { location: 'בני ברק', sickCount: 999999, percentageGrowth: '0.2%', percentagePopulation: '3%', isolatedCount: 0 },
+    },
+    {
+      data: { location: 'תל אביב', sickCount: 9999, percentageGrowth: '80%', percentagePopulation: '15%', isolatedCount: 5050 },
+    },
+    {
+      data: { location: 'חיפה', sickCount: 700, percentageGrowth: '55%', percentagePopulation: '20%', isolatedCount: 2000 },
+    },
+    {
+      data: { location: 'פתח תקווה', sickCount: 600, percentageGrowth: '40%', percentagePopulation: '70%', isolatedCount: 1000 },
+    },
+    {
+      data: { location: 'אילת', sickCount: 500, percentageGrowth: '50%', percentagePopulation: '25%', isolatedCount: 1200 },
     },
   ];
 }
