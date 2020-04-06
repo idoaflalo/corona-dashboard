@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NbCardModule, NbIconModule, NbButtonModule, NbTreeGridModule } from '@nebular/theme';
+import { NbCardModule, NbIconModule, NbButtonModule, NbTreeGridModule, NbPopoverModule } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 
 import { ThemeModule } from '../../@theme/theme.module';
@@ -16,6 +16,7 @@ import { SmallGraphStatisticComponent } from './small-graph-statistic/small-grap
 import { VerticalBarComponent } from './vertical-bar/vertical-bar.component';
 import { ExplicitCurrentHeightDirective } from './explicit-current-height.directive';
 import { InfectedByGenderComponent } from './infected-by-gender/infected-by-gender.component';
+import { PopoverTrendGraphComponent } from './popover-trend-graph/popover-trend-graph.component';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { InfectedByGenderComponent } from './infected-by-gender/infected-by-gend
     ThemeModule,
     NgxEchartsModule,
     NbTreeGridModule,
+    NbPopoverModule,
   ],
   declarations: [
     DashboardComponent,
@@ -40,6 +42,7 @@ import { InfectedByGenderComponent } from './infected-by-gender/infected-by-gend
     VerticalBarComponent,
     ExplicitCurrentHeightDirective,
     InfectedByGenderComponent,
+    PopoverTrendGraphComponent,
   ],
 })
 export class DashboardModule {}

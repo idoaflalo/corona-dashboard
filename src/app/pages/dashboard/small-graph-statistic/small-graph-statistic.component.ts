@@ -4,6 +4,7 @@ import {
   ChartStatisticData,
   ChangeAmountStatisticConfig,
 } from '../../../@core/data/statistics';
+import { PopoverTrendGraphComponent } from '../popover-trend-graph/popover-trend-graph.component';
 
 export interface SmallGraphStatisticConfig extends ChangeAmountStatisticConfig {
   title: string;
@@ -31,6 +32,7 @@ export class SmallGraphStatisticComponent {
 
   public totalAmount!: number;
   public chartOption!: EChartOption<EChartOption.SeriesLine>;
+  showTrendPopoverComponent = PopoverTrendGraphComponent;
 
   private updateTotalAmount() {
     this.totalAmount = this.config.data.value.reduce(
