@@ -1,12 +1,12 @@
 .card {
     display: flex;
     flex-direction: row;
-    padding-left: 0;
+    padding: 0;
     overflow: hidden;
     border-radius: 10px;
     border: 0;
     .info {
-        flex: 0.5;
+        flex: 0.4;
         .title {
             padding: var(--card-padding);
             border-bottom: var(--card-divider-width) var(--card-divider-style) var(--card-divider-color);
@@ -18,8 +18,11 @@
             font-weight: var(--card-header-text-font-weight);
             line-height: var(--card-header-text-line-height);
         }
+        .content {
+            padding: 0 10px;
+        }
     }
     .map {
-        flex: 0.5;
+        flex: 0.6;
     }
 }
