@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LinearGraphData } from '../ngx-linear-graph/interfaces';
 import { data } from '../epidemiologic-graph/mock';
 
