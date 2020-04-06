@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NbCardModule, NbIconModule, NbButtonModule, NbTreeGridModule } from '@nebular/theme';
+import { NbCardModule, NbIconModule, NbButtonModule, NbTreeGridModule, NbSelectModule } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 
 import { ThemeModule } from '../../@theme/theme.module';
@@ -16,6 +16,8 @@ import { SmallGraphStatisticComponent } from './small-graph-statistic/small-grap
 import { VerticalBarComponent } from './vertical-bar/vertical-bar.component';
 import { ExplicitCurrentHeightDirective } from './explicit-current-height.directive';
 import { InfectedByGenderComponent } from './infected-by-gender/infected-by-gender.component';
+import { WorldMapComponent } from './world-map/world-map.component';
+import { MapLegendComponent } from './corona-map/map-legend/map-legend.component';
 
 @NgModule({
   imports: [
@@ -25,6 +27,7 @@ import { InfectedByGenderComponent } from './infected-by-gender/infected-by-gend
     ThemeModule,
     NgxEchartsModule,
     NbTreeGridModule,
+    NbSelectModule,
   ],
   declarations: [
     DashboardComponent,
@@ -40,6 +43,8 @@ import { InfectedByGenderComponent } from './infected-by-gender/infected-by-gend
     VerticalBarComponent,
     ExplicitCurrentHeightDirective,
     InfectedByGenderComponent,
+    WorldMapComponent,
+    MapLegendComponent,
   ],
 })
 export class DashboardModule {}

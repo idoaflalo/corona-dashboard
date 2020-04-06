@@ -1,9 +1,35 @@
 <nb-card class="card" size="small">
-    <div class="info">
-      <div class="title">הקורונה בישראל</div>
-      <div class="content">
-
+  <div class="info">
+    <div class="title">הקורונה בישראל</div>
+    <div class="content">
+      <nb-select
+        class="date-selection"
+        [(selected)]="selectedDate"
+        shape="round"
+        hero
+      >
+        <nb-option
+          *ngFor="let item of ['נכון לעכשיו', 'שבוע שעבר']; let i = index"
+          [value]="i + ''"
+          >{{ item }}</nb-option
+        >
+      </nb-select>
+      <div class="options">
+        <button
+          *ngFor="
+            let item of ['קצב גידול', 'בידוד', 'חולים', 'בדיקות', 'במצב קשה']
+          "
+          nbButton
+          shape="round"
+          size="small"
+          status="basic"
+          outline
+        >
+          {{ item }}
+        </button>
       </div>
+
     </div>
-    <div echarts class="map" [options]="options" ngxExplicitCurrentHeight [withPadding]="false"></div>
+  </div>
+  <ngx-world-map class="map" [data]="israelMap"></ngx-world-map>
 </nb-card>
