@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LinearGraphData } from '../ngx-linear-graph/interfaces';
 import { data } from '../epidemiologic-graph/mock';
 
@@ -8,8 +8,8 @@ import { data } from '../epidemiologic-graph/mock';
   styleUrls: ['./popover-trend-graph.component.scss'],
 })
 export class PopoverTrendGraphComponent implements OnInit {
+  // will fetch data by itself
   data: LinearGraphData[] = data;
-
   constructor() { }
 
   ngOnInit(): void {
