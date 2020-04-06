@@ -16,6 +16,7 @@ export interface VerticalBarData {
 export class VerticalBarComponent {
   @Input() leftColor: string;
   @Input() rightColor: string;
+  @Input() xAxisLabel: string = '';
   private _data: VerticalBarData[] = [];
 
   @Input() set data(data: VerticalBarData[]) {
@@ -30,16 +31,22 @@ export class VerticalBarComponent {
 
   public updateChartOption() {
     this.chartOption = {
+      textStyle: {
+        fontFamily: 'Open Sans Hebrew',
+      },
       grid: {
         left: '3%',
         right: '4%',
-        bottom: '3%',
+        bottom: '10%',
         top: '3%',
         containLabel: true,
       },
       xAxis: [
         {
           type: 'value',
+          name: this.xAxisLabel,
+          nameLocation: 'middle',
+          nameGap: 30,
           axisLine: {
             show: false,
           },

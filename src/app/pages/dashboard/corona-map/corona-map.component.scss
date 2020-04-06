@@ -1,0 +1,28 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 0;
+    .info {
+        flex: 0.4;
+        .title {
+            padding: var(--card-padding);
+            border-bottom: var(--card-divider-width) var(--card-divider-style) var(--card-divider-color);
+            border-top-left-radius: var(--card-border-radius);
+            border-top-right-radius: var(--card-border-radius);
+            color: var(--card-header-text-color);
+            font-family: var(--card-header-text-font-family);
+            font-size: var(--card-header-text-font-size);
+            font-weight: var(--card-header-text-font-weight);
+            line-height: var(--card-header-text-line-height);
+        }
+        .content {
+            padding: 0 10px;
+        }
+    }
+    .map {
+        flex: 0.6;
+    }
+}
