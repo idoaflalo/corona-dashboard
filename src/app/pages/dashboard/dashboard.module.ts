@@ -17,6 +17,7 @@ import { VerticalBarComponent } from './vertical-bar/vertical-bar.component';
 import { ExplicitCurrentHeightDirective } from './explicit-current-height.directive';
 import { InfectedByGenderComponent } from './infected-by-gender/infected-by-gender.component';
 import { PopoverTrendGraphComponent } from './popover-trend-graph/popover-trend-graph.component';
+import { PopoverDistributionGraphComponent } from './popover-distribution-graph/popover-distribution-graph.component';
 
 @NgModule({
   imports: [
@@ -43,6 +44,7 @@ import { PopoverTrendGraphComponent } from './popover-trend-graph/popover-trend-
     ExplicitCurrentHeightDirective,
     InfectedByGenderComponent,
     PopoverTrendGraphComponent,
+    PopoverDistributionGraphComponent,
   ],
 })
 export class DashboardModule {}

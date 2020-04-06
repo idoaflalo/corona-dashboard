@@ -18,7 +18,7 @@ export class DashboardComponent {
         { value: 400, name: 'מלון', color: '#48CAFF' },
       ],
     },
-    ...new Array(4).fill(null).map((_, i) => ({
+    ...new Array(3).fill(null).map((_, i) => ({
       title: 'סה"כ נדבקים',
       changeAmount: i * 2 + 10,
       changePercantage: +(10 / (i + 1)).toFixed(1).replace(/\.0$/, ''),

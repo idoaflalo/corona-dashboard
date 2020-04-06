@@ -5,6 +5,7 @@ import {
   ChangeAmountStatisticConfig,
 } from '../../../@core/data/statistics';
 import { PopoverTrendGraphComponent } from '../popover-trend-graph/popover-trend-graph.component';
+import { PopoverDistributionGraphComponent } from '../popover-distribution-graph/popover-distribution-graph.component';
 
 export interface SmallGraphStatisticConfig extends ChangeAmountStatisticConfig {
   title: string;
@@ -19,11 +20,17 @@ export interface SmallGraphStatisticConfig extends ChangeAmountStatisticConfig {
 })
 export class SmallGraphStatisticComponent {
   private _config: SmallGraphStatisticConfig;
+  popoverComponent;
   @Input() set config(config: SmallGraphStatisticConfig) {
     this._config = config;
     if (config != null) {
       this.updateTotalAmount();
       this.updateChartOption();
+    }
+    if (this.config.showTrendGraph) {
+      this.popoverComponent = PopoverTrendGraphComponent;
+    }else if (this.config.showDistributionGraph) {
+      this.popoverComponent = PopoverDistributionGraphComponent;
     }
   }
   get config() {
@@ -32,7 +39,6 @@ export class SmallGraphStatisticComponent {
 
   public totalAmount!: number;
   public chartOption!: EChartOption<EChartOption.SeriesLine>;
-  showTrendPopoverComponent = PopoverTrendGraphComponent;
 
   private updateTotalAmount() {
     this.totalAmount = this.config.data.value.reduce(
