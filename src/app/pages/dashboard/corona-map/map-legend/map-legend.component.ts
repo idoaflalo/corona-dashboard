@@ -1,15 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { NbThemeService, NbJSThemeVariable } from '@nebular/theme';
 
 @Component({
-  selector: 'map-legend',
+  selector: 'ngx-map-legend',
   templateUrl: './map-legend.component.html',
-  styleUrls: ['./map-legend.component.scss']
+  styleUrls: ['./map-legend.component.scss'],
 })
 export class MapLegendComponent implements OnInit {
+  @Input() set data(data) {
+    this.items = this.update(data);
+  }
+  public items = [];
+  private colors: (string | string[] | NbJSThemeVariable)[] = [];
 
-  constructor() { }
+  constructor(private theme: NbThemeService) {}
 
-  ngOnInit() {
+  async ngOnInit() {
+    const variables = (await this.theme.getJsTheme().toPromise()).variables;
+    this.colors = [
+      variables.primary,
+      variables.info,
+      variables.success,
+      variables.warning,
+      variables.danger,
+    ];
   }
 
+  private update(data) {
+    return data
+  }
 }

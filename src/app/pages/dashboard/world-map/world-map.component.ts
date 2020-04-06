@@ -4,6 +4,7 @@ import { NbThemeService, NbJSThemeOptions } from '@nebular/theme';
 import { HttpClient } from '@angular/common/http';
 import { combineLatest } from 'rxjs';
 import { takeWhile } from 'rxjs/operators';
+import { MapData } from './interfaces';
 
 @Component({
   selector: 'ngx-world-map',
@@ -12,7 +13,7 @@ import { takeWhile } from 'rxjs/operators';
 })
 export class WorldMapComponent implements OnDestroy {
   public chartOption: any;
-  @Input() set data(data) {
+  @Input() set data(data: MapData[]) {
     this._data = data;
     if (this.themeConfig) {
       this.updateChartOption();
@@ -23,7 +24,7 @@ export class WorldMapComponent implements OnDestroy {
   }
   private alive = true;
   private themeConfig: NbJSThemeOptions;
-  private _data = [];
+  private _data: MapData[] = [];
 
   constructor(private theme: NbThemeService, private http: HttpClient) {
     combineLatest([
@@ -34,7 +35,9 @@ export class WorldMapComponent implements OnDestroy {
       .subscribe(([world, config]: [any, NbJSThemeOptions]) => {
         registerMap('world', world);
         this.themeConfig = config;
-        this.updateChartOption();
+        if (this.data) {
+          this.updateChartOption();
+        }
       });
   }
 
@@ -95,20 +98,25 @@ export class WorldMapComponent implements OnDestroy {
             areaColor: bubbleTheme.areaHoverColor,
           },
         },
-        center: [34.979229, 31.859451],
-        zoom: 100,
+        center: [34.879229, 31.559451],
+        zoom: 5,
       },
       series: [
         {
           type: 'scatter',
           coordinateSystem: 'geo',
+          symbolSize: (val: number[]) => {
+            // console.log(this.data.reduce((pre, cur) => pre + cur.value, 0))
+            return val[2] / 100;
+          },
           data: this.data.map((item) => {
             return {
               name: item.name,
-              value: [item.coordinates[0], item.coordinates[1], 1],
+              value: [...item.coordinates, item.value],
               itemStyle: {
                 normal: {
-                  color: geoColors[Math.floor(Math.random() * geoColors.length)],
+                  color:
+                    geoColors[Math.floor(Math.random() * geoColors.length)],
                 },
               },
             };

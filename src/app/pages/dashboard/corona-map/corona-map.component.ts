@@ -19,7 +19,7 @@ export class CoronaMapComponent {
   private _selectedDate: string = '0';
 
   constructor(private http: HttpClient) {
-    this.http.get('assets/map/israel.json').subscribe((israelMap: any) => {
+    this.http.get('assets/map/israelCities.json').subscribe((israelMap: any) => {
       this.israelMap = israelMap;
     });
   }
