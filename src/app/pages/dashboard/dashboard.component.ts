@@ -15,7 +15,7 @@ export class DashboardComponent {
       data: [
         { value: 1780, name: 'בית חולים', color: '#1C7D7E' },
         { value: 1780, name: 'בית', color: '#B6CA51' },
-        { value: 400, name: 'קשה', color: '#48CAFF' },
+        { value: 400, name: 'מלון', color: '#48CAFF' },
       ],
     },
     ...new Array(4).fill(null).map((_, i) => ({

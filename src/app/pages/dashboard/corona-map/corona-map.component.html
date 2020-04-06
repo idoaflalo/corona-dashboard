@@ -1,6 +1,9 @@
-<nb-card>
-  <nb-card-header>הקורונה בישראל</nb-card-header>
-  <nb-card-body>
-    <div echarts [options]="options"></div>
-  </nb-card-body>
+<nb-card class="card" size="small">
+    <div class="info">
+      <div class="title">הקורונה בישראל</div>
+      <div class="content">
+
+      </div>
+    </div>
+    <div echarts class="map" [options]="options" ngxExplicitCurrentHeight [withPadding]="false"></div>
 </nb-card>

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { PieChartData } from './interfaces';
+import { EChartOption } from 'echarts';
 
 @Component({
   selector: 'ngx-pie-chart',
@@ -14,7 +15,7 @@ export class PieChartComponent {
   get data() {
     return this._data;
   }
-  public options: any = {};
+  public options: EChartOption<EChartOption.SeriesPie> = {};
   public sum: number = 0;
   private _data: PieChartData[] = [];
 
@@ -23,28 +24,23 @@ export class PieChartComponent {
       textStyle: {
         fontFamily: 'Open Sans Hebrew',
       },
-      grid: {
-        top: 500,
-      },
       legend: {
         left: 'center',
         top: 'bottom',
+        icon: 'circle',
         data: data,
-        formatter: (name: string) => {
-          const item = data.find((v: PieChartData) => v.name === name);
-          return name + ': ' + item.value;
-        },
+        align: 'right',
       },
       series: [
         {
           type: 'pie',
           radius: ['50%', '60%'],
           data: data,
-          top: -75,
+          center: ['50%', '40%'],
           label: {
             formatter: '{c}',
             fontWeight: 'bold',
-            // fontSize: 15,
+            fontSize: 14,
           },
           emphasis: {
             itemStyle: {

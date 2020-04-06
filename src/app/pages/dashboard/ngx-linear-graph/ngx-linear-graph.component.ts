@@ -9,6 +9,8 @@ import { LinearGraphData } from './interfaces';
 })
 export class NgxLinearGraphComponent implements AfterViewInit, OnDestroy {
   @Input() data: LinearGraphData[] = [];
+  @Input() xAxisLabel: string = '';
+  @Input() yAxisLabel: string = '';
   options: any = {};
   themeSubscription: any;
 
@@ -41,6 +43,13 @@ export class NgxLinearGraphComponent implements AfterViewInit, OnDestroy {
             axisTick: {
               alignWithLabel: true,
             },
+            name: this.xAxisLabel,
+            nameLocation: 'middle',
+            nameGap: 30,
+            nameTextStyle: {
+              color: '#8e9193',
+              fontSize: 14,
+            },
             axisLine: {
               lineStyle: {
                 color: 'transparent',
@@ -56,14 +65,16 @@ export class NgxLinearGraphComponent implements AfterViewInit, OnDestroy {
         yAxis: [
           {
             type: 'value',
+            name: this.yAxisLabel,
+            nameLocation: 'middle',
+            nameGap: 50,
+            nameTextStyle: {
+              color: '#8e9193',
+              fontSize: 14,
+            },
             axisLine: {
               lineStyle: {
                 color: 'transparent',
-              },
-            },
-            splitLine: {
-              lineStyle: {
-                color: echarts.splitLineColor,
               },
             },
             axisLabel: {
@@ -74,9 +85,9 @@ export class NgxLinearGraphComponent implements AfterViewInit, OnDestroy {
           },
         ],
         grid: {
-          left: 40,
+          left: 70,
           right: 15,
-          top: 40,
+          top: 20,
           bootom: 0,
         },
         series: [
