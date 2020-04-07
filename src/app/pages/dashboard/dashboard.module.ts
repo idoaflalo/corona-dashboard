@@ -18,6 +18,7 @@ import { ExplicitCurrentHeightDirective } from './explicit-current-height.direct
 import { InfectedByGenderComponent } from './infected-by-gender/infected-by-gender.component';
 import { WorldMapComponent } from './world-map/world-map.component';
 import { MapLegendComponent } from './corona-map/map-legend/map-legend.component';
+import { IframeCoronaMapComponent } from './iframe-corona-map/iframe-corona-map.component';
 
 @NgModule({
   imports: [
@@ -45,6 +46,7 @@ import { MapLegendComponent } from './corona-map/map-legend/map-legend.component
     InfectedByGenderComponent,
     WorldMapComponent,
     MapLegendComponent,
+    IframeCoronaMapComponent,
   ],
 })
 export class DashboardModule {}

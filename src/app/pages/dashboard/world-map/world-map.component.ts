@@ -28,7 +28,7 @@ export class WorldMapComponent implements OnDestroy {
 
   constructor(private theme: NbThemeService, private http: HttpClient) {
     combineLatest([
-      this.http.get('assets/map/world.json'),
+      this.http.get('assets/map/israelRegions.json'),
       this.theme.getJsTheme(),
     ])
       .pipe(takeWhile(() => this.alive))
